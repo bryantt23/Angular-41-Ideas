@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/script.js"></script>
+</head>
+<body ng-app="projects" ng-controller="projectsCtrl">
+    <h1>Hello Plunker!</h1>
+    <input text="" ng-model="msg" />
+
+    {{msg}}
+
+    <br>
+    Input to Upper Case: {{msg|uppercase}}
+    <br>
+    Input to Lower Case: {{msg|lowercase}}
+</body>
+</html>

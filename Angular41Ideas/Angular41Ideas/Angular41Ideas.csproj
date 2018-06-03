@@ -75,8 +75,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HtmlPage1.html" />
-    <Content Include="JavaScript.js" />
+    <Content Include="Home.html" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\script.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
