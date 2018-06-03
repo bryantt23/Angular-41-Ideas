@@ -15,5 +15,26 @@
     Input to Upper Case: {{msg|uppercase}}
     <br>
     Input to Lower Case: {{msg|lowercase}}
+
+    <h3>Calculator</h3>
+    <br>
+    <input text="" ng-model="firstNum" />
+    <br>
+    <input text="" ng-model="secondNum" />
+    <br />
+    <button ng-click="addNumbers()">Click to add numbers</button>
+    <br />
+    <button ng-click="multiplyNumbers()">Click to multiply numbers</button>
+
+    <br />
+    <div ng-show="numbersAdded">
+        {{firstNum}} + {{secondNum}} = {{firstNum+secondNum}}
+    </div>
+    <div ng-show="numbersMultiplied">
+        {{firstNum}} * {{secondNum}} = {{firstNum*secondNum}}
+    </div>
+    <br />
+
+
 </body>
 </html>
