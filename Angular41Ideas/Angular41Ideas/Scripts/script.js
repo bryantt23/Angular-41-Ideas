@@ -5,7 +5,7 @@ var app = angular.module("projects", []);
 app.controller("projectsCtrl", function ($scope, hexafy, geolocationSvc) {
     $scope.msg = "hello";
 
-    $scope.numbersAdded = false;
+    $scope.numbersAdded = false; 
     $scope.numbersMultiplied = false;
 
     $scope.locationString = "";
