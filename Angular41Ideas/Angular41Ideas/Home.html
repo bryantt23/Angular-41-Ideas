@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="style.css" />
     <script src="Scripts/angular.js"></script>
+    <script src="Scripts/geolocationSvc.js"></script>
     <script src="Scripts/script.js"></script>
+    <!--https://instanteduhelp.com/angular-js-project-ideas/-->
 </head>
 <body ng-app="projects" ng-controller="projectsCtrl">
     <h1>Hello Plunker!</h1>
@@ -34,6 +36,17 @@
         {{firstNum}} * {{secondNum}} = {{firstNum*secondNum}}
     </div>
     <br />
+    <br />
+
+    <button ng-click="captureUserLocation()">Get location</button>
+    <div ng-show="locationString.length>0">
+        {{locationString}}
+    </div>
+
+    <p>The hexadecimal value of 255 is:</p>
+
+    <h1>{{hex}}</h1>
+
 
 
 </body>
