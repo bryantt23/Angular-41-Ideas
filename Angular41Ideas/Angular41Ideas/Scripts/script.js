@@ -44,12 +44,17 @@ app.controller("projectsCtrl", function ($scope, hexafy, geolocationSvc, $http) 
         geolocationSvc.getCurrentPosition().then(onUserLocationFound);
         var location = geolocationSvc.getCurrentPosition();
 
-    }
+    }();
 
     $scope.hex = hexafy.myFunc(255);
 })
 
 
+app.filter('celsiusToFarenheit', function () {
+    return function (x) {
+        return x * 9 / 5 + 32 + " degrees Farenheit";
+    };
+});
 
 app.service('hexafy', function () {
     this.myFunc = function (x) {

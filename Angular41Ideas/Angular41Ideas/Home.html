@@ -49,7 +49,8 @@
 
     <p>{{weatherInfo}}</p>
 
-
+    <p>You are in: {{weatherInfo.data.name}}</p>
+    <p>The temperature is: <span ng-bind="weatherInfo.data.main.temp | celsiusToFarenheit"></span></p>
 
 </body>
 </html>
