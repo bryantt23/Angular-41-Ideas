@@ -2,7 +2,7 @@
 
 var app = angular.module("projects", []);
 
-app.controller("projectsCtrl", function ($scope, hexafy, geolocationSvc, $http) {
+app.controller("projectsCtrl", function ($scope, hexafyService, geolocationSvc, $http) {
     $scope.msg = "hello";
 
     $scope.numbersAdded = false;
@@ -46,48 +46,5 @@ app.controller("projectsCtrl", function ($scope, hexafy, geolocationSvc, $http) 
 
     }();
 
-    $scope.hex = hexafy.myFunc(255);
+    $scope.hex = hexafyService.myFunc(255);
 })
-
-
-app.filter('celsiusToFarenheit', function () {
-    return function (x) {
-        return x * 9 / 5 + 32 + " degrees Farenheit";
-    };
-});
-
-app.service('hexafy', function () {
-    this.myFunc = function (x) {
-        return x.toString(16);
-    }
-});
-
-app.service('geolocationSvc', ['$q', '$window', function ($q, $window) {
-
-    'use strict';
-    function hi() {
-        alert("hii");
-    }
-
-    function getCurrentPosition() {
-        var deferred = $q.defer();
-
-        if (!$window.navigator.geolocation) {
-            deferred.reject('Geolocation not supported.');
-        } else {
-            $window.navigator.geolocation.getCurrentPosition(
-                function (position) {
-                    deferred.resolve(position);
-                },
-                function (err) {
-                    deferred.reject(err);
-                });
-        }
-
-        return deferred.promise;
-    }
-    return {
-        hi: hi,
-        getCurrentPosition: getCurrentPosition
-    };
-}]);

@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\Filters\celsiusToFarenheit.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -77,7 +78,8 @@
   <ItemGroup>
     <Content Include="Home.html" />
     <Content Include="Scripts\angular.js" />
-    <Content Include="Scripts\geolocationSvc.js" />
+    <Content Include="Scripts\Services\geolocationService.js" />
+    <Content Include="Scripts\Services\hexafyService.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Web.config" />
   </ItemGroup>
