@@ -48,12 +48,29 @@
 
     <p>The hexadecimal value of 255 is:</p>
 
-    <h1>{{hex}}</h1>
+    <h3>{{hex}}</h3>
 
-    <p>{{weatherInfo}}</p>
+    <!--<p>{{weatherInfo}}</p>-->
 
     <p>You are in: {{weatherInfo.data.name}}</p>
     <p>The temperature is: <span ng-bind="weatherInfo.data.main.temp | celsiusToFarenheit"></span></p>
+
+    <h3>Paste text you want to read</h3>
+    <br>
+    <div>
+        <input textarea="" ng-model="textToRead" />
+        <button ng-click="showTextToRead()">Read the text</button>
+
+    </div>
+    <div>
+        <h3>{{wordToRead}}</h3>        
+    </div>
+    <div>
+        {{textToRead}}
+    </div>
+
+
+
 
 </body>
 </html>

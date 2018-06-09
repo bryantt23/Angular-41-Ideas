@@ -2,7 +2,7 @@
 
 var app = angular.module("projects", []);
 
-app.controller("projectsCtrl", function ($scope, hexafyService, geolocationSvc, $http) {
+app.controller("projectsCtrl", function ($scope, hexafyService, geolocationSvc, $http, $timeout) {
     $scope.msg = "hello";
 
     $scope.numbersAdded = false;
@@ -37,6 +37,30 @@ app.controller("projectsCtrl", function ($scope, hexafyService, geolocationSvc, 
         });
     }
 
+    $scope.showTextToRead = function () {
+        var arr = $scope.textToRead.split(" ");
+
+        var i = 0, n = arr.length;
+
+        myLoop(arr, i, n);    
+    }
+
+    $scope.wordToRead = "";
+
+    $scope.$watch('wordToRead', function () {
+        //alert('hey, myVar has changed!');
+    });
+
+
+    function myLoop(arr, i, n) {           //  create a loop function
+        $timeout(function () {    //  call a 3s setTimeout when the loop is called
+            $scope.wordToRead = arr[i];          //  your code here
+            i++;                     //  increment the counter
+            if (i < n) {            //  if the counter < 10, call the loop function
+                myLoop(arr, i, n);             //  ..  again which will trigger another 
+            }                        //  ..  setTimeout()
+        }, 1000)
+    }                  //  start the loop
 
 
     $scope.captureUserLocation = function () {
