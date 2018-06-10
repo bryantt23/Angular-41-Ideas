@@ -81,6 +81,7 @@
     <Content Include="Scripts\Services\geolocationService.js" />
     <Content Include="Scripts\Services\hexafyService.js" />
     <Content Include="Scripts\script.js" />
+    <Content Include="style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

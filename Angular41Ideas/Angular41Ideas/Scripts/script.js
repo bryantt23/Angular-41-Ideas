@@ -7,7 +7,8 @@ app.controller("projectsCtrl", function ($scope, hexafyService, geolocationSvc, 
 
     $scope.numbersAdded = false;
     $scope.numbersMultiplied = false;
-
+    $scope.readingInProcess = false;
+    
     $scope.locationString = "";
 
     $scope.addNumbers = function () {
@@ -42,6 +43,7 @@ app.controller("projectsCtrl", function ($scope, hexafyService, geolocationSvc, 
 
         var i = 0, n = arr.length;
 
+        $scope.readingInProcess = true;
         myLoop(arr, i, n);    
     }
 
@@ -59,6 +61,9 @@ app.controller("projectsCtrl", function ($scope, hexafyService, geolocationSvc, 
             if (i < n) {            //  if the counter < 10, call the loop function
                 myLoop(arr, i, n);             //  ..  again which will trigger another 
             }                        //  ..  setTimeout()
+            else {
+                $scope.readingInProcess = false;
+            }
         }, 1000)
     }                  //  start the loop
 

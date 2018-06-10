@@ -55,18 +55,24 @@
     <p>You are in: {{weatherInfo.data.name}}</p>
     <p>The temperature is: <span ng-bind="weatherInfo.data.main.temp | celsiusToFarenheit"></span></p>
 
-    <h3>Paste text you want to read</h3>
-    <br>
-    <div>
-        <input textarea="" ng-model="textToRead" />
-        <button ng-click="showTextToRead()">Read the text</button>
 
+    <div ng-hide="readingInProcess">
+        <h3>Paste text you want to read</h3>
+        <br>
+        <div>
+            <input textarea="" ng-model="textToRead" />
+            <button ng-click="showTextToRead()">Read the text</button>
+        </div>               
     </div>
-    <div>
-        <h3>{{wordToRead}}</h3>        
-    </div>
-    <div>
-        {{textToRead}}
+
+    <div ng-show="readingInProcess">
+        <div>
+            {{textToRead}}
+        </div>
+
+        <div id="readerArea">
+            <h1>{{wordToRead}}</h1>
+        </div>
     </div>
 
 
