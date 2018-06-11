@@ -10,6 +10,8 @@ app.controller("projectsCtrl", function ($scope, hexafyService, geolocationSvc, 
     $scope.readingInProcess = false;
     
     $scope.locationString = "";
+    $scope.timeLeft = "";
+    
 
     $scope.addNumbers = function () {
         $scope.numbersAdded = true;
@@ -53,6 +55,44 @@ app.controller("projectsCtrl", function ($scope, hexafyService, geolocationSvc, 
         //alert('hey, myVar has changed!');
     });
 
+    $scope.$watch('timeRemaining', function () {
+        //alert('hey, myVar has changed!');
+    });
+
+
+
+
+    $scope.startTimer = function () {
+        $scope.timeRemaining = $scope.countDownTime;
+        countDownNumbers();
+/*
+ * 
+ *         //  create a loop function
+        $timeout(function () {    //  call a 3s setTimeout when the loop is called
+            $scope.timeRemaining;          //  your code here
+                                 //  increment the counter
+            if ($scope.timeRemaining > 0) {            //  if the counter < 10, call the loop function
+                $scope.startTimer();             //  ..  again which will trigger another 
+            }                        //  ..  setTimeout()
+            else {
+                alert("Timer finished!");
+            }
+        }, 1000)
+ */
+    }
+
+    function countDownNumbers() {
+        $timeout(function () {    //  call a 3s setTimeout when the loop is called
+            --$scope.timeRemaining;          //  your code here
+            //  increment the counter
+            if ($scope.timeRemaining > 0) {            //  if the counter < 10, call the loop function
+                countDownNumbers();             //  ..  again which will trigger another 
+            }                        //  ..  setTimeout()
+            else {
+                alert("Timer finished!");
+            }
+        }, 1000)
+    }
 
     function myLoop(arr, i, n) {           //  create a loop function
         $timeout(function () {    //  call a 3s setTimeout when the loop is called
