@@ -11,6 +11,7 @@ app.controller("projectsCtrl", function ($scope, hexafyService, geolocationSvc, 
     
     $scope.locationString = "";
     $scope.timeLeft = "";
+    $scope.hover = false;
     
 
     $scope.addNumbers = function () {

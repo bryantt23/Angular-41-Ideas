@@ -70,7 +70,7 @@
         <div>
             <input textarea="" ng-model="textToRead" />
             <button ng-click="showTextToRead()">Read the text</button>
-        </div>               
+        </div>
     </div>
 
     <div ng-show="readingInProcess">
@@ -90,8 +90,35 @@
     <br>
     <div>
         <button ng-click="startTimer()">Start timer</button>
-    </div>      
+    </div>
     <h2>{{timeRemaining}}</h2>
+
+
+    {{hoverColor}}
+
+    <!--<div ng-class="{blue: hoverColor}"
+         ng-mouseenter="hoverColor = true"
+         ng-mouseleave="hoverColor = false">
+        Mouse over me!
+    </div>-->
+
+<!--
+    <div id="" ng-class="{blue: hover}"
+         ng-mouseenter="hover = true"
+         ng-mouseleave="hover = false">
+         ng-class="{green: hoverColor}"
+         
+        This div changes based on hover
+    </div>
+-->
+
+    {{hover}}
+    <div
+         ng-class="{red: hover, lightBlue: !hover}"
+         ng-mouseenter="hover = true"
+         ng-mouseleave="hover = false">
+        Hover me.
+    </div>
 
 
 </body>
