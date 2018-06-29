@@ -116,5 +116,10 @@ app.controller("projectsCtrl", function ($scope, hexafyService, geolocationSvc, 
 
     }();
 
+    $scope.captureCoordinate = function ($event) {
+        $scope.x = $event.x;
+        $scope.y = $event.y;
+    }
+
     $scope.hex = hexafyService.myFunc(255);
 })

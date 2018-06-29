@@ -18,7 +18,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--https://instanteduhelp.com/angular-js-project-ideas/-->
 </head>
-<body ng-app="projects" ng-controller="projectsCtrl">
+<body ng-app="projects" ng-controller="projectsCtrl" ng-mousemove="captureCoordinate($event)">
     <h1>Hello Plunker!</h1>
     <input text="" ng-model="msg" />
 
@@ -101,25 +101,26 @@
          ng-mouseleave="hoverColor = false">
         Mouse over me!
     </div>-->
+    <!--
+        <div id="" ng-class="{blue: hover}"
+             ng-mouseenter="hover = true"
+             ng-mouseleave="hover = false">
+             ng-class="{green: hoverColor}"
 
-<!--
-    <div id="" ng-class="{blue: hover}"
-         ng-mouseenter="hover = true"
-         ng-mouseleave="hover = false">
-         ng-class="{green: hoverColor}"
-         
-        This div changes based on hover
-    </div>
--->
-
+            This div changes based on hover
+        </div>
+    -->
     {{hover}}
-    <div
-         ng-class="{red: hover, lightBlue: !hover}"
+    <div ng-class="{red: hover, lightBlue: !hover}"
          ng-mouseenter="hover = true"
          ng-mouseleave="hover = false">
         Hover me.
     </div>
 
+    <div>
+        <div>x: {{x}}</div>
+        <div>y: {{y}}</div>
+    </div>
 
 </body>
 </html>
